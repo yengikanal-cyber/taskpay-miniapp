@@ -1,1 +1,182 @@
+<!-- HOME -->
+<div id="homePage" class="page active">
 
+    <div class="header">
+
+        <div class="top">
+
+            <div class="user">
+                <div class="avatar" id="avatar">U</div>
+
+                <div>
+                    <div class="hello">Xush kelibsiz 👋</div>
+                    <div class="username" id="headerName">Foydalanuvchi</div>
+                </div>
+            </div>
+
+            <div class="notification">🔔</div>
+
+        </div>
+
+        <div class="balance">
+
+            <div class="balance-label">Mening balansim</div>
+
+            <div class="balance-value">
+                <span id="headerBalance">12 500</span> so'm
+            </div>
+
+            <div class="balance-buttons">
+                <button class="balance-btn" onclick="showPage('walletPage')">
+                    💰 Hamyon
+                </button>
+
+                <button class="balance-btn" onclick="showToast('Tez orada mavjud bo‘ladi')">
+                    ⬆️ Yechib olish
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="section-title">
+            <h2>Vazifalar</h2>
+            <button onclick="showPage('tasksPage')">Barchasi</button>
+        </div>
+
+        <div class="categories">
+            <button class="category active">Barchasi</button>
+            <button class="category">Telegram</button>
+            <button class="category">Instagram</button>
+            <button class="category">YouTube</button>
+        </div>
+
+        <div id="homeTasks" class="tasks"></div>
+
+    </div>
+
+</div>
+
+
+<!-- TASKS -->
+<div id="tasksPage" class="page">
+
+    <div class="content">
+
+        <div class="section-title">
+            <h2>Barcha vazifalar</h2>
+        </div>
+
+        <input
+            class="search"
+            id="search"
+            placeholder="🔎 Vazifani qidirish..."
+            oninput="renderTasks()"
+        >
+
+        <div id="allTasks" class="tasks"></div>
+
+    </div>
+
+</div>
+
+
+<!-- WALLET -->
+<div id="walletPage" class="page">
+
+    <div class="content">
+
+        <div class="section-title">
+            <h2>Hamyon</h2>
+        </div>
+
+        <div class="wallet-card">
+
+            <div class="wallet-label">Mavjud balans</div>
+
+            <div class="wallet-value">
+                <span id="walletBalance">12 500</span> so'm
+            </div>
+
+            <button class="withdraw" onclick="withdraw()">
+                Pul yechib olish
+            </button>
+
+        </div>
+
+        <div style="margin-top:22px">
+
+            <div class="section-title">
+                <h2>Operatsiyalar</h2>
+            </div>
+
+            <div id="transactions"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PROFILE -->
+<div id="profilePage" class="page">
+
+    <div class="content">
+
+        <div class="section-title">
+            <h2>Mening profilim</h2>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="big-avatar" id="profileAvatar">U</div>
+
+            <div class="profile-name" id="profileName">
+                Foydalanuvchi
+            </div>
+
+            <div class="profile-id">
+                ID: #100248
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong id="completed">0</strong>
+                    <span>Bajarilgan</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="earned">0</strong>
+                    <span>Ishlangan</span>
+                </div>
+
+                <div class="stat">
+                    <strong>98%</strong>
+                    <span>Reyting</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="nav-item" onclick="showPage('profilePage',this)">
+    <div class="nav-icon">👤</div>
+    Profil
+</div><div class="modal-box">
+
+    <div class="modal-head">
+        <strong>Vazifa</strong>
+        <button class="close" onclick="closeModal()">×</button>
+    </div>
+
+    <div id="taskDetail"></div>
+
+</div>
